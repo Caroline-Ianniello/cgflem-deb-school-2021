@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>Mytilus_edulis</TITLE>
+  <style>
+    div.prd {
+      width: 50%;
+      float: left;
+    }
+
+    div.par {
+      width: 50%;
+      float: right;
+    }
+
+    p.clear {
+      clear: both;
+    }
+
+    .head {
+      background-color: #FFE7C6
+    }
+
+    .psd {
+      color: blue
+    }
+
+    #prd {
+      border-style: solid hidden solid hidden;
+    }
+
+    #par {
+      border-style: solid hidden solid hidden;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+  </style>
+</HEAD>
+
+<BODY>
+
+  <div class="prd">
+  <h1>Mytilus edulis</h1>
+  </div>
+
+  <div class="par">
+  <h4>COMPLETE = 3.8; MRE =    0.351; SMSE =    0.370 </h4>
+  </div>
+
+  <p class="clear"></p>
+
+  <div class="prd">
+  <h2>Data & predictions</h2>
+  <TABLE id="prd">
+    <TR  class="head"><TH>data</TH> <TH>prd</TH> <TH>RE</TH>  <TH>symbol</TH> <TH>units</TH> <TH>description</TH> </TR>
+    <TR><TD>0.2</TD> <TD>0.3318</TD> <TD>0.6588</TD> <TD>ab</TD> <TD>d</TD> <TD>age at birth</TD></TR>
+    <TR><TD>365</TD> <TD>288.5</TD> <TD>0.2095</TD> <TD>tp</TD> <TD>d</TD> <TD>time since birth at puberty</TD></TR>
+    <TR><TD>8760</TD> <TD>9595</TD> <TD>0.09534</TD> <TD>am</TD> <TD>d</TD> <TD>life span</TD></TR>
+    <TR><TD>0.009</TD> <TD>0.008895</TD> <TD>0.01169</TD> <TD>Lb</TD> <TD>cm</TD> <TD>shell height at birth</TD></TR>
+    <TR><TD>1.2</TD> <TD>1.169</TD> <TD>0.02562</TD> <TD>Lp</TD> <TD>cm</TD> <TD>shell height at puberty</TD></TR>
+    <TR><TD> 15</TD> <TD>14.19</TD> <TD>0.05397</TD> <TD>Li</TD> <TD>cm</TD> <TD>ultimate shell height</TD></TR>
+    <TR><TD>2.69e-08</TD> <TD>3.047e-08</TD> <TD>0.1326</TD> <TD>Wwb</TD> <TD>g</TD> <TD>wet weight at birth</TD></TR>
+    <TR><TD>0.0638</TD> <TD>0.06921</TD> <TD>0.08472</TD> <TD>Wwp</TD> <TD>g</TD> <TD>wet weight at puberty</TD></TR>
+    <TR><TD>124.6</TD> <TD>123.7</TD> <TD>0.007162</TD> <TD>Wwi</TD> <TD>g</TD> <TD>ultimate wet weight</TD></TR>
+    <TR><TD>5650</TD> <TD>6027</TD> <TD>0.06686</TD> <TD>Ri</TD> <TD>#/d</TD> <TD>maximum reprod rate</TD></TR>
+    <TR><TD>0.2</TD> <TD>0.0007691</TD> <TD>0.9962</TD> <TD>GSI</TD> <TD>-</TD> <TD>gonado somatic index</TD></TR>
+    <TR><TD colspan="2">see figure</TD> <TD>0.4635</TD> <TD>SJXp_WiddFiet1979</TD> <TD colspan="2">Tot Part Matter, <font color="blue"><i>vs.</i></font> pseudofaeces prod</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>2.047</TD> <TD>SJXp_PrinSmaa1991</TD> <TD colspan="2">Tot Part Matter, <font color="blue"><i>vs.</i></font> pseudofaeces prod</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>1.584</TD> <TD>SJX_KiorMohl1980</TD> <TD colspan="2">Tot Part Matter, <font color="blue"><i>vs.</i></font> ingestion rate</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.3073</TD> <TD>SJX_PrinSmaa1991</TD> <TD colspan="2">Tot Part Matter, <font color="blue"><i>vs.</i></font> ingestion rate</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.5394</TD> <TD>SJP_PrinSmaa1991</TD> <TD colspan="2">Tot Part Matter, <font color="blue"><i>vs.</i></font> faeces prod rate</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.9366</TD> <TD>LJO</TD> <TD colspan="2">shell height, <font color="blue"><i>vs.</i></font> O2 consumption</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.6622</TD> <TD>JXJO_25</TD> <TD colspan="2">ingestion rate, <font color="blue"><i>vs.</i></font> O2 consumption</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.2618</TD> <TD>JXJO_45</TD> <TD colspan="2">ingestion rate, <font color="blue"><i>vs.</i></font> O2 consumption</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1381</TD> <TD>tL_0</TD> <TD colspan="2">time since birth, <font color="blue"><i>vs.</i></font> shell height</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1291</TD> <TD>tL_13</TD> <TD colspan="2">time since birth, <font color="blue"><i>vs.</i></font> shell height</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.08101</TD> <TD>tL_33</TD> <TD colspan="2">time since birth, <font color="blue"><i>vs.</i></font> shell height</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1947</TD> <TD>LW</TD> <TD colspan="2">shell height, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.6212</TD> <TD>tdL</TD> <TD colspan="2">shell height, <font color="blue"><i>vs.</i></font> growth</TD>
+    <TR class="psd"><TD>0.02</TD> <TD>0.061</TD> <TD>2.05</TD> <TD>psd.v</TD> <TD>cm/d</TD> <TD>energy conductance</TD></TR>
+    <TR class="psd"><TD>0.8</TD> <TD>0.9965</TD> <TD>0.2456</TD> <TD>psd.kap</TD> <TD>-</TD> <TD>allocation fraction to soma</TD></TR>
+    <TR class="psd"><TD>0.95</TD> <TD>0.95</TD> <TD>  0</TD> <TD>psd.kap_R</TD> <TD>-</TD> <TD>reproduction efficiency</TD></TR>
+    <TR class="psd"><TD> 18</TD> <TD>2.646</TD> <TD>0.853</TD> <TD>psd.p_M</TD> <TD>J/d.cm^3</TD> <TD>vol-spec som maint</TD></TR>
+    <TR class="psd"><TD>0.002</TD> <TD>0.0001906</TD> <TD>0.9047</TD> <TD>psd.k_J</TD> <TD>1/d</TD> <TD>maturity maint rate coefficient</TD></TR>
+    <TR class="psd"><TD>0.8</TD> <TD>0.8019</TD> <TD>0.002366</TD> <TD>psd.kap_G</TD> <TD>-</TD> <TD>growth efficiency</TD></TR>
+    <TR class="psd"><TD>0.3</TD> <TD>0.1691</TD> <TD>0.4363</TD> <TD>psd.k</TD> <TD>-</TD> <TD>maintenance ratio</TD></TR>
+  </TABLE>
+  </div>
+
+  <div class="par">
+  <h2>abj parameters at 20.0&deg;C</h2>
+  <TABLE id="par">
+    <TR class="head"><TH>symbol</TH> <TH>units</TH> <TH>value</TH>  <TH>free</TH> <TH>description</TH> </TR>
+    <TR><TD>T_ref</TD> <TD>K</TD> <TD>293.1</TD> <TD>0</TD> <TD>Reference temperature</TD></TR>
+    <TR><TD>T_A</TD> <TD>K</TD> <TD>7022</TD> <TD>0</TD> <TD>Arrhenius temperature</TD></TR>
+    <TR><TD>z</TD> <TD>-</TD> <TD>4.167</TD> <TD>1</TD> <TD>zoom factor</TD></TR>
+    <TR><TD>F_m</TD> <TD>l/d.cm^2</TD> <TD>105.6</TD> <TD>0</TD> <TD>{F_m}, max spec searching rate</TD></TR>
+    <TR><TD>kap_X</TD> <TD>-</TD> <TD>0.9485</TD> <TD>0</TD> <TD>digestion efficiency of food to reserve</TD></TR>
+    <TR><TD>kap_P</TD> <TD>-</TD> <TD>0.0493</TD> <TD>0</TD> <TD>faecation efficiency of food to faeces</TD></TR>
+    <TR><TD>v</TD> <TD>cm/d</TD> <TD>0.061</TD> <TD>1</TD> <TD>energy conductance</TD></TR>
+    <TR><TD>kap</TD> <TD>-</TD> <TD>0.9965</TD> <TD>1</TD> <TD>allocation fraction to soma</TD></TR>
+    <TR><TD>kap_R</TD> <TD>-</TD> <TD>0.95</TD> <TD>0</TD> <TD>reproduction efficiency</TD></TR>
+    <TR><TD>p_M</TD> <TD>J/d.cm^3</TD> <TD>2.646</TD> <TD>1</TD> <TD>[p_M], vol-spec somatic maint</TD></TR>
+    <TR><TD>p_T</TD> <TD>J/d.cm^2</TD> <TD>  0</TD> <TD>0</TD> <TD>{p_T}, surf-spec somatic maint</TD></TR>
+    <TR><TD>k_J</TD> <TD>1/d</TD> <TD>0.0001906</TD> <TD>1</TD> <TD>maturity maint rate coefficient</TD></TR>
+    <TR><TD>E_G</TD> <TD>J/cm^3</TD> <TD>2348</TD> <TD>0</TD> <TD>[E_G], spec cost for structure</TD></TR>
+    <TR><TD>E_Hb</TD> <TD>J</TD> <TD>2.317e-07</TD> <TD>1</TD> <TD>maturity at birth</TD></TR>
+    <TR><TD>E_Hj</TD> <TD>J</TD> <TD>3.642e-07</TD> <TD>1</TD> <TD>maturity at metam</TD></TR>
+    <TR><TD>E_Hp</TD> <TD>J</TD> <TD>0.5578</TD> <TD>1</TD> <TD>maturity at puberty</TD></TR>
+    <TR><TD>h_a</TD> <TD>1/d^2</TD> <TD>4.282e-09</TD> <TD>1</TD> <TD>Weibull aging acceleration</TD></TR>
+    <TR><TD>s_G</TD> <TD>-</TD> <TD>0.0001</TD> <TD>0</TD> <TD>Gompertz stress coefficient</TD></TR>
+    <TR><TD>K_Y</TD> <TD>mg/l</TD> <TD>0.05468</TD> <TD>1</TD> <TD>half sat constant for inorg matter</TD></TR>
+    <TR><TD>T_AH</TD> <TD>K</TD> <TD>3.138e+04</TD> <TD>0</TD> <TD>Arrhenius temperature at upper boundary</TD></TR>
+    <TR><TD>T_AL</TD> <TD>K</TD> <TD>4.543e+04</TD> <TD>0</TD> <TD>Arrhenius temperature at lower boundary</TD></TR>
+    <TR><TD>T_H</TD> <TD>K</TD> <TD>296</TD> <TD>0</TD> <TD>upper boundary</TD></TR>
+    <TR><TD>T_L</TD> <TD>K</TD> <TD>275</TD> <TD>0</TD> <TD>lower boundary</TD></TR>
+    <TR><TD>del_M</TD> <TD>-</TD> <TD>0.3414</TD> <TD>1</TD> <TD>shape coefficient after metam</TD></TR>
+    <TR><TD>f</TD> <TD>-</TD> <TD>  1</TD> <TD>0</TD> <TD>scaled functional response for 0-var data</TD></TR>
+    <TR><TD>f_0</TD> <TD>-</TD> <TD>0.6941</TD> <TD>1</TD> <TD>initial scaled functional response for tdL data</TD></TR>
+    <TR><TD>f_tL</TD> <TD>-</TD> <TD>  1</TD> <TD>0</TD> <TD>scaled functional response for tL data</TD></TR>
+    <TR><TD>y_Ch_X</TD> <TD>mol/mol</TD> <TD>0.4655</TD> <TD>1</TD> <TD>mol Chlorophyll per Cmol food</TD></TR>
+  </TABLE>
+  </div>
+
+</BODY>
+</HTML>

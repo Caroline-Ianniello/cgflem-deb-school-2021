@@ -1,7 +1,7 @@
 close all; 
 global pets 
 
-pets = {'Metridium_senile'}; 
+pets = {'Mytilus_edulis'}; 
 check_my_pet(pets); 
 
 estim_options('default'); 
