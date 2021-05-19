@@ -35,21 +35,21 @@ metaData.email_cur  = {'starrlight.augustine@akvaplan.niva.no'};
 metaData.date_acc   = [2021 5 19];
 
 %% set zero-variate data
-data.Wdi = 2.1168; units.Wdi = 'g'; label.Wdi = 'ultimate dry weight'; bibkey.Wdi = {};
+data.Wdi = 0.0001; units.Wdi = 'g'; label.Wdi = 'ultimate dry weight'; bibkey.Wdi = {};
   comment.Wdi = 'For aposymbiotic colonies only. Holcomb et al. 2012';
-data.Wdim = 2.0964; units.Wdim = 'g'; label.Wdim = 'ultimate dry weight for males'; bibkey.Wdim = {};
-  comment.Wdim = 'For aposymbiotic colonies only. Holcomb et al. 2012';
+data.Wd_im = 0.00012; units.Wd_im = 'g'; label.Wd_im = 'ultimate dry weight for males'; bibkey.Wd_im = {};
+  comment.Wd_im = 'For aposymbiotic colonies only. Holcomb et al. 2012';
 
-data.tR = 365; units.tR = 'd'; label.tR = 'time since birth at first egg production'; bibkey.tR = {};
-  temp.tR = C2K(22); units.temp.tR = 'K'; label.temp.tR = 'temperature';
-  comment.tR = 'For aposymbiotic colonies only. Estimated.';
+% data.tR = 365; units.tR = 'd'; label.tR = 'time since birth at first egg production'; bibkey.tR = {};
+%   temp.tR = C2K(22); units.temp.tR = 'K'; label.temp.tR = 'temperature';
+%   comment.tR = 'For aposymbiotic colonies only. Estimated.';
 
 data.Wwi = 0.005; units.Wwi = 'g'; label.Wwi = 'ultimate wet weight'; bibkey.Wwi = {};
   comment.Wwi = 'For aposymbiotic colonies only. Estimated.';
 
-data.ah = 30; units.ah = 'd'; label.ah = 'age at hatch'; bibkey.ah = {};
-  temp.ah = C2K(22); units.temp.ah = 'K'; label.temp.ah = 'temperature';
-  comment.ah = 'For aposymbiotic colonies only. Estimated. Hatch=metamorphosis';
+data.tj = 30; units.tj = 'd'; label.tj = 'age at metamorphosis'; bibkey.tj = {};
+  temp.tj = C2K(22); units.temp.tj = 'K'; label.temp.tj = 'temperature';
+  comment.tj = 'For aposymbiotic colonies only. Estimated. Metamorphosis';
 
 data.Ri = 547.94; units.Ri = '#/d'; label.Ri = 'ultimate reproduction rate'; bibkey.Ri = {};
   temp.Ri = C2K(22); units.temp.Ri = 'K'; label.temp.Ri = 'temperature';

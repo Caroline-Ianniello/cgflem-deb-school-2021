@@ -7,34 +7,45 @@ v2struct(par); v2struct(cPar); v2struct(data); v2struct(auxData);
 
 % compute temperature correction factors
 pars_T = T_A;
-TC_tR = tempcorr(temp.tR, T_ref, pars_T);
-TC_ah = tempcorr(temp.ah, T_ref, pars_T);
+%TC_tR = tempcorr(temp.tR, T_ref, pars_T);
+TC_tj = tempcorr(temp.tj, T_ref, pars_T);
 TC_Ri = tempcorr(temp.Ri, T_ref, pars_T);
 
-% life cycle
-pars_tR = [g; k; l_T; v_Hb; v_Hx; v_Hp; t_N * k_M * TC_am];  % compose parameter vector
-[tau_R, tau_p, tau_x, tau_b, l_R, l_p, l_x, l_b, info] = get_tR(pars_tR, f); % -, scaled times & lengths
+%%%%%%%%%% life cycle
+%computing a bunch of variables which correspond to a certain type of life
+
+pars_tj = [g k l_T v_Hb v_Hj v_Hp];
+  [t_j, t_p, t_b, l_j, l_p, l_b, l_i, ~, ~, info] = get_tj(pars_tj, f);
+%get_tj is a different life cyle
 
 if info == 0
   prdData = []; return;
 end
 
-% hatch
-pars_UE0 = [V_Hb; g; k_J; k_M; v]; % compose parameter vector
-U_E0 = initial_scaled_reserve(f, pars_UE0); % d.cm^2, initial scaled reserve
-[U_H aUL] = ode45(@dget_aul, [0; U_Hh], [0 U_E0 1e-10], [], kap, v, k_J, g, L_m);
-a_h = aUL(end,1)/ TC_ah; % d, age at hatch
-
-% ultimate
-l_i = f - l_T; % -, scaled ultimate length
-L_i = L_m * l_i; % cm, ultimate structural length
-Ww_i = L_i^3 * (1 + f * ome); % g, ultimate wet weight 
-Wd_i = L_i^3 * (1 + f * ome) * d_V; % g, ultimate dry weight
-
-% reproduction
-pars_R = [kap; kap_R; g; k_J; k_M; L_T; v; U_Hb; U_Hp]; % compose parameter vector
-R_i = TC_Ri * reprod_rate(L_i, f, pars_R); % #/d, ultimate reproduction rate
-t_R = (tau_R - tau_b)/ k_M/ TC_tR; % d, time since birth at 1st brood
+% birth
+%   L_b  = L_m * l_b;    % cm, structural length at birth at f
+%   Lw_b = L_b / del_Mb; % cm, total length at birth at f
+  
+  % metamorphosis
+%   L_j  = L_m * l_j;                 % cm, structural length at metamorphosis at f
+%   Lw_j = L_j / del_Mb;              % cm, total length at metamorphosis at f
+  tT_j = (t_j - t_b) / k_M / TC_tj; % d,  time since birth at metamorphosis at f and T
+  
+  % puberty 
+%   L_p  = L_m * l_p;                 % cm, structural length at puberty at f
+%   Lw_p = L_p / del_M;               % cm, total length at puberty at f
+  %tT_p = (t_p - t_b) / k_M / TC_tp; % d,  time since birth at puberty at f and T
+  %%% potentially add 1 year here as hitting puberty?
+  
+  % ultimate
+  L_i  = L_m * l_i;           % cm, ultimate structural length at f
+%   Lw_i = L_i / del_M;         % cm, ultimate total length at f
+  Wd_i = L_i^3 * (1 + f * ome) * d_V; % g, ultimate dry weight
+  Ww_i = L_i^3 * (1 + f * ome); % g, ultimate wet weight 
+  
+  % reproduction
+  pars_R = [kap; kap_R; g; k_J; k_M; L_T; v; U_Hb; U_Hj; U_Hp]; % compose parameter vector at T
+  RT_i = TC_Ri * reprod_rate_j(L_i, f, pars_R);                 % #/d
 
 % males
 p_Am_m = z_m * p_M/ kap; % J/d.cm^2, {p_Am} spec assimilation flux
@@ -43,4 +54,31 @@ g_m = E_G/ (kap* E_m_m); % -, energy investment ratio
 m_Em_m = y_E_V * E_m_m/ E_G; % mol/mol, reserve capacity
 ome_m = m_Em_m * w_E/ w_V; % -, contribution of reserve to weight
 L_mm = v/ k_M/ g_m; L_im = f * L_mm; % cm, max ultimate length
-if ~exist('v_Hpm','var'); v_Hpm = v_Hp; end; pars_tpm = [g_m k l_T v_Hb v_Hpm];
+Wd_im = L_im^3 * (1 + f * ome) * d_V; % g, ultimate dry weight for males
+%if ~exist('v_Hpm','var'); v_Hpm = v_Hp; end; pars_tpm = [g_m k l_T v_Hb v_Hpm];
+  
+% % hatch
+% pars_UE0 = [V_Hb; g; k_J; k_M; v]; % compose parameter vector
+% U_E0 = initial_scaled_reserve(f, pars_UE0); % d.cm^2, initial scaled reserve
+% [U_H aUL] = ode45(@dget_aul, [0; U_Hh], [0 U_E0 1e-10], [], kap, v, k_J, g, L_m);
+% a_h = aUL(end,1)/ TC_ah; % d, age at hatch
+% 
+% % ultimate
+% l_i = f - l_T; % -, scaled ultimate length
+% L_i = L_m * l_i; % cm, ultimate structural length
+% Ww_i = L_i^3 * (1 + f * ome); % g, ultimate wet weight 
+% Wd_i = L_i^3 * (1 + f * ome) * d_V; % g, ultimate dry weight
+% 
+% % reproduction
+% pars_R = [kap; kap_R; g; k_J; k_M; L_T; v; U_Hb; U_Hp]; % compose parameter vector
+% R_i = TC_Ri * reprod_rate(L_i, f, pars_R); % #/d, ultimate reproduction rate
+% t_R = (tau_R - tau_b)/ k_M/ TC_tR; % d, time since birth at 1st brood
+
+
+% pack to output
+  prdData.tj  = tT_j;
+  prdData.Wdi  = Wd_i;
+  prdData.Wwi = Ww_i;
+  prdData.Ri  = RT_i;
+  prdData.Wd_im  = Wd_im;
+
