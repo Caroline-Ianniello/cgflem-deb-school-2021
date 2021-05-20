@@ -36,15 +36,15 @@ metaData.date_acc   = [2021 5 19];
 
 %% set zero-variate data
 data.Wdi = 0.0001; units.Wdi = 'g'; label.Wdi = 'ultimate dry weight'; bibkey.Wdi = {};
-  comment.Wdi = 'For aposymbiotic colonies only. Holcomb et al. 2012';
-data.Wd_im = 0.00012; units.Wd_im = 'g'; label.Wd_im = 'ultimate dry weight for males'; bibkey.Wd_im = {};
-  comment.Wd_im = 'For aposymbiotic colonies only. Holcomb et al. 2012';
+  comment.Wdi = 'For aposymbiotic colonies only.';
+data.Wd_im = 0.00015; units.Wd_im = 'g'; label.Wd_im = 'ultimate dry weight for males'; bibkey.Wd_im = {};
+  comment.Wd_im = 'For aposymbiotic colonies only.';
 
 % data.tR = 365; units.tR = 'd'; label.tR = 'time since birth at first egg production'; bibkey.tR = {};
 %   temp.tR = C2K(22); units.temp.tR = 'K'; label.temp.tR = 'temperature';
 %   comment.tR = 'For aposymbiotic colonies only. Estimated.';
 
-data.Wwi = 0.005; units.Wwi = 'g'; label.Wwi = 'ultimate wet weight'; bibkey.Wwi = {};
+data.Wwi = 0.008; units.Wwi = 'g'; label.Wwi = 'ultimate wet weight'; bibkey.Wwi = {};
   comment.Wwi = 'For aposymbiotic colonies only. Estimated.';
 
 data.tj = 30; units.tj = 'd'; label.tj = 'age at metamorphosis'; bibkey.tj = {};
